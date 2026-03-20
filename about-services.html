@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About The Services | Handcrafted by Kajal</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      /* --- Custom Animations & Styling --- */
+      .nav-bar-simple {
+        padding: 2rem 5% 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .services-hero {
+        padding: 8rem 5% 6rem;
+        text-align: center;
+        background-color: #f9f9f9;
+        overflow: hidden;
+      }
+      
+      /* Staggered Reveal Animation classes */
+      .anim-reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .anim-reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .anim-delay-1 { transition-delay: 0.1s; }
+      .anim-delay-2 { transition-delay: 0.2s; }
+
+      .services-hero h1 {
+        font-size: 5rem;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        margin-bottom: 2rem;
+        color: #111;
+        line-height: 1.1;
+      }
+      .services-hero p {
+        font-size: 1.35rem;
+        color: #555;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+      
+      .service-detail-section {
+        padding: 6rem 5%;
+        background: #fff;
+      }
+      .service-detail-row {
+        display: flex;
+        align-items: center;
+        gap: 6rem;
+        margin-bottom: 10rem;
+      }
+      .service-detail-row:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+      
+      /* NEW Premium Blur & Color Fade Effect */
+      .service-image {
+        flex: 1;
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+      }
+      .service-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 4/5;
+        filter: grayscale(100%) blur(15px);
+        transform: scale(1.15);
+        transition: filter 1.8s cubic-bezier(0.16, 1, 0.3, 1), transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+        display: block;
+      }
+      .service-image.active img {
+        filter: grayscale(70%) blur(0px);
+        transform: scale(1);
+      }
+      .service-image:hover img {
+        filter: grayscale(0%) blur(0px);
+        transform: scale(1.04) rotate(1deg);
+        transition: filter 0.6s ease-out, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+
+      .service-content {
+        flex: 1;
+        padding: 2rem 0;
+      }
+      .service-number {
+        font-size: 1rem;
+        font-weight: 800;
+        color: #a0a0a0;
+        margin-bottom: 1.5rem;
+        display: inline-block;
+        letter-spacing: 0.2em;
+        border-bottom: 2px solid #333;
+        padding-bottom: 0.5rem;
+      }
+      .service-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        margin-bottom: 1.5rem;
+        color: #111;
+        line-height: 1.1;
+      }
+      .service-desc {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: #444;
+        margin-bottom: 2.5rem;
+      }
+      
+      /* CTA Animation */
+      .premium-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 2.5rem;
+        background: #111;
+        color: #fff;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 50px;
+        position: relative;
+        overflow: hidden;
+        transition: color 0.3s ease;
+        z-index: 1;
+      }
+      .premium-btn::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: #333;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: -1;
+      }
+      .premium-btn:hover::before {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+      @media (max-width: 900px) {
+        .service-detail-row, .service-detail-row:nth-child(even) {
+          flex-direction: column;
+          gap: 3rem;
+          margin-bottom: 6rem;
+        }
+        .services-hero h1 { font-size: 3.5rem; }
+        .service-title { font-size: 2.5rem; }
+      }
+    </style>
+  </head>
+  <body class="bg-light text-dark" style="min-height: 100vh; background-color: #fff; margin: 0; padding: 0;">
+    
+    <div class="nav-bar-simple">
+      <a href="./index.html" class="logo text-dark" style="color: #111; text-decoration: none; font-size: 0.9rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase;">← BACK TO PORTFOLIO</a>
+    </div>
+
+    <main>
+      <!-- Hero Section with Staggered Reveal -->
+      <section class="services-hero">
+        <h1 class="anim-reveal">About The Services</h1>
+        <p class="anim-reveal anim-delay-1">Diving deep into the seven-step meticulous craftsmanship that defines every masterpiece. From the initial charcoal sketch to the grand gallery unveiling, witness the classical journey behind true high-end fine art.</p>
+      </section>
+
+      <section class="service-detail-section">
+        
+        <!-- Phase 1 -->
+        <div class="service-detail-row">
+          <div class="service-image anim-target">
+            <img src="./images/portrait_woman_1773915729254.png" alt="Concept & Composition" />
+          </div>
+          <div class="service-content anim-reveal anim-delay-1">
+            <span class="service-number">PHASE 01</span>
+            <h2 class="service-title">Concept &<br>Composition</h2>
+            <p class="service-desc">Every great painting begins with a profound vision. We engage in deep philosophical dialogues to understand the emotion you wish to capture, creating multiple charcoal studies and compositional sketches to ensure the absolute perfect foundation before a single drop of oil touches the canvas.</p>
+            <a href="#contact" class="premium-btn">Inquire Now ↗</a>
+          </div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="service-detail-row">
+          <div class="service-image anim-target">
+            <img src="./images/abstract_crimson_1773915806634.png" alt="The Classical Palette" />
+          </div>
+          <div class="service-content anim-reveal anim-delay-1">
+            <span class="service-number">PHASE 02</span>
+            <h2 class="service-title">The Classical<br>Palette</h2>
+            <p class="service-desc">Color is the voice of the painting. Inspired by the Old Masters, we hand-grind the finest historic pigments and mix them with cold-pressed linseed oil. This organic approach allows us to achieve rich, luminous hues and dramatic undertones that commercial paints simply cannot rival.</p>
+            <a href="#contact" class="premium-btn">Explore Colors ↗</a>
+          </div>
+        </div>
+
+        <!-- Phase 3 -->
+        <div class="service-detail-row">
+          <div class="service-image anim-target">
+            <img src="./images/portrait_royal_1773915710458.png" alt="Masterful Brushwork" />
+          </div>
+          <div class="service-content anim-reveal anim-delay-1">
+            <span class="service-number">PHASE 03</span>
+            <h2 class="service-title">Masterful<br>Brushwork</h2>
+            <p class="service-desc">The soul of the artwork lives in its texture. We apply dozens of impasto layers and delicate translucent glazes across weeks of careful work. Each brushstroke is intentional, building unparalleled depth and creating a tactile surface that commands attention from every angle in the room.</p>
+            <a href="#contact" class="premium-btn">Commission Art ↗</a>
+          </div>
+        </div>
+        
+        <!-- Phase 4 (NEW) -->
+        <div class="service-detail-row">
+          <div class="service-image anim-target">
+            <img src="./images/landscape_valley_1773915745430.png" alt="The Curing Process" />
+          </div>
+          <div class="service-content anim-reveal anim-delay-1">
+            <span class="service-number">PHASE 04</span>
+            <h2 class="service-title">The Curing<br>Process</h2>
+            <p class="service-desc">Unlike modern synthetics, traditional oil paints do not simply dry; they polymerize and cure over incredible spans of time. We place the artwork in a climate-controlled atelier, allowing the heavy impasto layers to properly oxidize. This patient waiting period ensures the absolute structural integrity of the masterpiece.</p>
+            <a href="#contact" class="premium-btn">Learn The Process ↗</a>
+          </div>
+        </div>
+
+        <!-- Phase 5 (NEW) -->
+        <div class="service-detail-row">
+          <div class="service-image anim-target">
+            <img src="./images/abstract_gold_1773915785235.png" alt="Bespoke Gilding" />
+          </div>
+          <div class="service-content anim-reveal anim-delay-1">
+            <span class="service-number">PHASE 05</span>
+            <h2 class="service-title">Bespoke 24k<br>Gilding</h2>
+            <p class="service-desc">For select pieces requiring a touch of the divine, we hand-apply genuine 24-karat gold leaf using a centuries-old water gilding technique. These delicate metallic accents catch ambient light uniquely at every hour of the day, transforming the painting into a living, breathing entity within your space.</p>
+            <a href="#contact" class="premium-btn">View Gold Art ↗</a>
+          </div>
+        </div>
+
+        <!-- Phase 6 -->
+        <div class="service-detail-row">
+          <div class="service-image anim-target">
+            <img src="./images/landscape_sunset_1773915765764.png" alt="Archival Finishing" />
+          </div>
+          <div class="service-content anim-reveal anim-delay-1">
+            <span class="service-number">PHASE 06</span>
+            <h2 class="service-title">Archival Varnish<br>& Framing</h2>
+            <p class="service-desc">To ensure your masterpiece lasts for generations, once fully cured, it is sealed with a non-yellowing museum-grade archival varnish. We then assist you in selecting a custom, hand-carved solid wood frame tailored to both the painting's aura and your specific interior architecture.</p>
+            <a href="#contact" class="premium-btn">Frame Selection ↗</a>
+          </div>
+        </div>
+        
+        <!-- Phase 7 (NEW) -->
+        <div class="service-detail-row">
+          <div class="service-image anim-target">
+            <img src="./images/blog_eiffel_1773912701116.png" alt="The Grand Unveiling" />
+          </div>
+          <div class="service-content anim-reveal anim-delay-1">
+            <span class="service-number">PHASE 07</span>
+            <h2 class="service-title">The Grand<br>Unveiling</h2>
+            <p class="service-desc">The acquisition of fine art should be celebrated. Upon completion, we coordinate a private, champagne-catered unveiling event directly in your residence or a private gallery space. The artwork is presented under curated temporary lighting before being permanently installed by our white-glove team.</p>
+            <a href="#contact" class="premium-btn">Book An Unveiling ↗</a>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Luxury Split Contact Section -->
+      <section class="contact-section" id="contact" style="background: #ffffff; color: #111;">
+        <div class="contact-split">
+          
+          <div class="contact-image-wrapper anim-reveal">
+            <img src="./images/gallery_venice_1773912631467.png" alt="Abstract Art" style="width:100%; height:100%; object-fit:cover; aspect-ratio:3/4; border-radius:12px; filter: grayscale(50%);" />
+            <div class="contact-image-overlay" style="display: flex; align-items: center; justify-content: center;">
+              <h2 class="overlay-text anim-reveal anim-delay-2" style="font-size: 3.5rem; font-weight: 800; color: #fff; text-align: center; line-height: 1.1;">YOUR VISION<br><span style="font-family: serif; font-style: italic; font-weight: 300; font-size: 0.9em; display: inline-block;">REALIZED</span></h2>
+            </div>
+          </div>
+          
+          <div class="contact-form-side anim-reveal anim-delay-1">
+            <div class="contact-header mb-8" style="text-align: left;">
+              <h2 class="section-title" style="color: #111; font-weight: 800; font-size: 3.5rem; letter-spacing: -0.04em;">Let's Connect.</h2>
+              <p class="body-text" style="margin: 1rem 0 0; font-size: 1.15rem; color: #666; max-width: 450px;">Begin the dialogue to commission a deeply personal, breathtaking piece of fine art.</p>
+            </div>
+            
+            <div class="contact-form-wrapper light-premium-wrapper">
+              <form action="mailto:studio@handcraftedbykajal.com" method="post" enctype="text/plain" class="custom-form light-theme-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="Name" required placeholder="John Doe" class="light-premium-input" />
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="Email" required placeholder="john@example.com" class="light-premium-input" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inquiry">Nature of Inquiry</label>
+                  <div class="light-select-wrapper">
+                    <select id="inquiry" name="Inquiry_Type" class="light-premium-input select">
+                      <option value="Concept & Composition">Concept & Composition</option>
+                      <option value="Masterful Brushwork">Masterful Brushwork</option>
+                      <option value="Archival Varnish & Framing">Archival Varnish & Framing</option>
+                      <option value="Full Commission">Full Commission</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="message">Your Vision</label>
+                  <textarea id="message" name="Message" rows="3" required placeholder="Tell me about your vision..." class="light-premium-input textarea"></textarea>
+                </div>
+                <div class="text-left mt-8">
+                  <button type="submit" class="light-submit-btn w-full">
+                    <span>Send Inquiry</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light" style="padding-top: 4rem; background: #0a0a0a; border-top: 1px solid #222; display: flex; flex-direction: column;">
+      <div class="footer-top flex-between" style="display: flex; justify-content: space-between; margin-bottom: 2rem;">
+        <div class="footer-links">
+          <h4 class="mb-4" style="color: #fff; font-size: 1.2rem; margin-bottom: 1rem;">Quick links</h4>
+          <div class="link-grid" style="display: flex; gap: 1rem;">
+            <a href="./index.html#collection" style="color: #888; text-decoration: none;">Portfolio</a>
+            <a href="./blog.html" style="color: #888; text-decoration: none;">Studio Journal</a>
+            <a href="#contact" style="color: #888; text-decoration: none;">Contact</a>
+            <a href="./legacy.html" style="color: #888; text-decoration: none;">Legacy</a>
+          </div>
+        </div>
+        <div class="footer-contact text-right">
+          <p class="mb-2 text-sm text-gray" style="color: #888; margin-bottom: 0.5rem;">Starting a new project?</p>
+          <h3 class="contact-number" style="color: #fff; font-size: 2rem; margin: 0;"><a href="https://wa.me/918826464841" target="_blank" style="color: white; text-decoration: none;">+91 8826464841</a></h3>
+        </div>
+      </div>
+      <div class="footer-bottom flex-between" style="display: flex; justify-content: space-between; border-top: 1px solid #333; padding-top: 2rem;">
+        <div class="logo small" style="color: #fff; font-weight: 800; letter-spacing: 0.05em;">HANDCRAFTED<br>BY KAJAL</div>
+        <div class="copyright" style="color: #666;">
+          Copyright © 2024 All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Animation Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+            }
+          });
+        }, observerOptions);
+
+        // Observe text & image reveals
+        document.querySelectorAll('.anim-reveal, .anim-target').forEach(el => {
+          observer.observe(el);
+        });
+      });
+    </script>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
