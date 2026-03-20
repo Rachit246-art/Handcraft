@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inside the Studio | Handcrafted by Kajal</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      .blog-page-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem 1.5rem;
+      }
+      .blog-tag {
+        border-radius: 50px;
+        border: 1px solid #444;
+        padding: 0.3rem 1rem;
+        font-size: 0.8rem;
+        color: #fff;
+        background: transparent;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+      .blog-tag:hover {
+        background-color: #222;
+      }
+      .blog-tag-dot {
+        width: 6px;
+        height: 6px;
+        background-color: #ff3b30;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      .dark-card-title {
+        color: #ffffff !important;
+        font-size: 1.1rem;
+        line-height: 1.4;
+        margin-top: 1.2rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+      .dark-card-meta {
+        color: #aaaaaa !important;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .nav-bar-simple {
+        padding: 2rem 5% 0;
+        display: flex;
+        align-items: center;
+      }
+      @media (max-width: 1024px) {
+        .blog-page-grid { grid-template-columns: repeat(2, 1fr); }
+      }
+      @media (max-width: 600px) {
+        .blog-page-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body class="bg-dark text-light" style="min-height: 100vh; background-color: #121212;">
+    
+    <div class="nav-bar-simple">
+      <a href="./index.html" class="logo text-light" style="color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.05em;">← BACK TO PORTFOLIO</a>
+    </div>
+
+    <main class="section-padding" style="padding-top: 3rem; padding-bottom: 6rem; border-bottom: 1px solid #222;">
+      <h1 class="hero-title" style="font-size: 4rem; letter-spacing: -0.05em; margin-bottom: 1.5rem; color: #fff;">Inside the Studio</h1>
+      
+      <div class="mb-8 flex" style="gap: 1rem; display: flex; margin-bottom: 4rem;">
+        <button class="blog-tag"><span class="blog-tag-dot"></span> Exhibitions</button>
+        <button class="blog-tag"><span class="blog-tag-dot" style="background-color: #4cd964;"></span> Techniques</button>
+        <button class="blog-tag"><span class="blog-tag-dot" style="background-color: #007aff;"></span> Inspiration</button>
+      </div>
+
+      <div class="blog-page-grid">
+        <!-- Row 1 -->
+        <article class="blog-card">
+          <div class="img-wrapper" style="aspect-ratio: 408/360; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+            <img src="./images/gallery_venice_1773912631467.png" alt="Venice Painting" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
+          </div>
+          <h4 class="dark-card-title">The Romance of Venice: Capturing Twilight in Oils</h4>
+          <p class="dark-card-meta">By Kajal • Mar 2024</p>
+        </article>
+        
+        <article class="blog-card">
+          <div class="img-wrapper" style="aspect-ratio: 408/360; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+            <img src="./images/gallery_ganesha_1773912650708.png" alt="Ganesha Painting" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <h4 class="dark-card-title">Divine Inspirations: The Symbolism of Ganesha in Art</h4>
+          <p class="dark-card-meta">By Kajal • Feb 2024</p>
+        </article>
+
+        <article class="blog-card">
+          <div class="img-wrapper" style="aspect-ratio: 408/360; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+            <img src="./images/recent_work_temple_1773912685442.png" alt="Temple Painting" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <h4 class="dark-card-title">Gilded Corridors: Perspectives in Indian Temple Paintings</h4>
+          <p class="dark-card-meta">By Kajal • Jan 2024</p>
+        </article>
+
+        <article class="blog-card">
+          <div class="img-wrapper" style="aspect-ratio: 408/360; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+            <img src="./images/blog_eiffel_1773912701116.png" alt="Eiffel Painting" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <h4 class="dark-card-title">Midnight in Paris: Utilizing Impressionist Brushstrokes</h4>
+          <p class="dark-card-meta">By Kajal • Jan 2024</p>
+        </article>
+
+        <!-- Row 2 -->
+        <article class="blog-card">
+          <div class="img-wrapper" style="aspect-ratio: 408/360; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+            <img src="./images/blog_dog_1773912718203.png" alt="Dog Painting" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <h4 class="dark-card-title">Pet Portraits: Bringing Your Furry Best Friend to Canvas</h4>
+          <p class="dark-card-meta">By Kajal • Dec 2023</p>
+        </article>
+        
+        <article class="blog-card">
+          <div class="img-wrapper" style="aspect-ratio: 408/360; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+            <img src="./images/artist_about_1773912613167.png" alt="Artist Desk" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <h4 class="dark-card-title">Behind the Easel: My Journey as a Freelance Painter</h4>
+          <p class="dark-card-meta">By Kajal • Nov 2023</p>
+        </article>
+
+        <article class="blog-card">
+          <div class="img-wrapper" style="aspect-ratio: 408/360; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+            <img src="./images/gallery_venice_1773912631467.png" alt="Water Painting" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <h4 class="dark-card-title">Water Color vs Oils: Recreating Real Water Reflections</h4>
+          <p class="dark-card-meta">By Kajal • Nov 2023</p>
+        </article>
+
+        <article class="blog-card">
+          <div class="img-wrapper" style="aspect-ratio: 408/360; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+            <img src="./images/gallery_ganesha_1773912650708.png" alt="Metallic Paints" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <h4 class="dark-card-title">Metallic Paints: Enhancing Jewelry and Details on Canvas</h4>
+          <p class="dark-card-meta">By Kajal • Oct 2023</p>
+        </article>
+
+        <!-- Row 3 -->
+        <article class="blog-card">
+          <div class="img-wrapper" style="aspect-ratio: 408/360; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+            <img src="./images/recent_work_temple_1773912685442.png" alt="Architecture Painting" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <h4 class="dark-card-title">Architectural Details: Painting Intricate Marble Carvings</h4>
+          <p class="dark-card-meta">By Kajal • Oct 2023</p>
+        </article>
+        
+        <article class="blog-card">
+          <div class="img-wrapper" style="aspect-ratio: 408/360; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+            <img src="./images/blog_eiffel_1773912701116.png" alt="Cityscape" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <h4 class="dark-card-title">Cityscapes at Twilight: Setting the Perfect Evening Mood</h4>
+          <p class="dark-card-meta">By Kajal • Sep 2023</p>
+        </article>
+
+        <article class="blog-card">
+          <div class="img-wrapper" style="aspect-ratio: 408/360; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+            <img src="./images/blog_dog_1773912718203.png" alt="Dog Fur" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <h4 class="dark-card-title">Texturing Fur: Premium Techniques for Animal Portraits</h4>
+          <p class="dark-card-meta">By Kajal • Sep 2023</p>
+        </article>
+
+        <article class="blog-card">
+          <div class="img-wrapper" style="aspect-ratio: 408/360; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+            <img src="./images/artist_about_1773912613167.png" alt="Studio Setup" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
+          <h4 class="dark-card-title">Setting Up Your Studio: Why Lighting is Everything for Painters</h4>
+          <p class="dark-card-meta">By Kajal • Aug 2023</p>
+        </article>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light" style="padding-top: 4rem;">
+      <div class="footer-top flex-between">
+        <div class="footer-links">
+          <h4 class="mb-4" style="color: #fff;">Quick links</h4>
+          <div class="link-grid">
+            <a href="./index.html#about">About</a>
+            <a href="./index.html#collection">What we do</a>
+            <a href="./index.html#contact">Contact</a>
+            <a href="#">Projects</a>
+            <a href="./blog.html">Blog</a>
+            <a href="./legacy.html">Pricing</a>
+            <a href="#">Installations</a>
+          </div>
+        </div>
+        <div class="footer-contact text-right">
+          <p class="mb-2 text-sm text-gray" style="color: #bbb;">Starting a new project?</p>
+          <h3 class="contact-number" style="color: #fff;"><a href="https://wa.me/918826464841" target="_blank" style="color: white; text-decoration: none;">+91 8826464841</a></h3>
+        </div>
+      </div>
+      <div class="footer-huge-text">
+        <h2 style="color: #fff;">SAY HELLO!</h2>
+      </div>
+      <div class="footer-bottom flex-between">
+        <div class="logo small" style="color: #fff;">HANDCRAFTED<br>BY KAJAL</div>
+        <div class="social-links">
+          <a href="#" style="color: #bbb;">Facebook ↗</a>
+          <a href="#" style="color: #bbb;">Twitter ↗</a>
+          <a href="#" style="color: #bbb;">Instagram ↗</a>
+          <a href="#" style="color: #bbb;">LinkedIn ↗</a>
+        </div>
+        <div class="copyright" style="color: #bbb;">
+          Copyright © 2024
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

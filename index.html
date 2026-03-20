@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Handcrafted by Kajal | Exact Clone</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">HANDCRAFTED<br>BY KAJAL</div>
+      <div class="nav-actions" style="display: flex; gap: 0.5rem; align-items: center;">
+        
+        <!-- Expanding Search -->
+        <div class="search-wrapper">
+          <input type="text" class="search-inline-input" placeholder="Search..." />
+          <button class="icon-btn search-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+        </div>
+
+        <!-- Dropdown Menu -->
+        <div class="menu-wrapper" style="position: relative;">
+          <button class="icon-btn menu-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+          
+          <div class="menu-dropdown">
+            <a href="./index.html">Home</a>
+            <a href="./legacy.html">The Legacy</a>
+            <a href="./blog.html">Inside the Studio</a>
+            <a href="#contact">Contact Me</a>
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-badge-container">
+          <div class="rotating-badge">
+            <svg viewBox="0 0 200 200" class="badge-text-svg">
+              <path id="circlePath" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" fill="transparent" />
+              <text>
+                <textPath href="#circlePath" startOffset="0%" textLength="470">AWARD WINNING DESIGNER • SINCE 2023 •</textPath>
+              </text>
+            </svg>
+            <img src="./images/artist_about_1773912613167.png" alt="Artist" class="badge-image" />
+          </div>
+        </div>
+        <div class="hero-content">
+          <h1 class="hero-title">The perfect place<br>for your masterpiece</h1>
+          <div class="hero-buttons">
+            <a href="./legacy.html" class="btn btn-dark">Legacy Edition ↗</a>
+            <a href="#contact" class="btn btn-outline">Let's Talk ↗</a>
+          </div>
+          <div class="hero-thumbnails">
+            <img src="./images/gallery_venice_1773912631467.png" alt="thumb1" class="rounded-thumb" />
+            <img src="./images/gallery_ganesha_1773912650708.png" alt="thumb2" class="rounded-thumb" />
+            <img src="./images/blog_eiffel_1773912701116.png" alt="thumb3" class="rounded-thumb" />
+            <img src="./images/blog_dog_1773912718203.png" alt="thumb4" class="rounded-thumb" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Marquee Section -->
+      <section class="marquee-section">
+        <div class="marquee-track">
+          <h2 class="marquee-text">RAFTED BY KAJAL HANDCRAFTED BY KAJAL HANDC</h2>
+          <h2 class="marquee-text">RAFTED BY KAJAL HANDCRAFTED BY KAJAL HANDC</h2>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="about-section bg-dark text-light" id="about">
+        <div class="about-grid">
+          <div class="about-image-wrapper">
+            <img src="./images/artist_about_1773912613167.png" alt="Artist holding dog painting" class="about-img" />
+          </div>
+          <div class="about-content">
+            <h3 class="section-subtitle">THE ARTIST</h3>
+            <p class="body-text">
+              I believe that art should move you. It should transform a room from a mere physical space into an emotional experience. With a lifelong dedication to the brush, I pour my soul into every canvas, ensuring that the artworks you collect aren't just decorations, but heirlooms that will be admired for generations.
+            </p>
+            <div class="mt-8">
+              <a href="./legacy.html" class="btn round-btn" style="background: white; color: black;">Explore The Legacy ↗</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recent Work Section -->
+      <section class="recent-work-section section-padding" id="collection">
+        <div class="section-header flex-between mb-8">
+          <h2 class="section-title">Masterpiece Collection</h2>
+          <div class="filter-tabs">
+            <button class="filter-btn active" data-filter="all">All Artworks</button>
+            <button class="filter-btn" data-filter="portraits">Oil Portraits</button>
+            <button class="filter-btn" data-filter="landscapes">Landscapes</button>
+            <button class="filter-btn" data-filter="abstract">Abstract</button>
+          </div>
+        </div>
+        <div class="work-grid">
+          <!-- Item 1: Venice (Square) -->
+          <div class="work-card" data-category="all landscapes">
+            <div class="img-wrapper square">
+              <img src="./images/gallery_venice_1773912631467.png" alt="Venetian Dreams" />
+            </div>
+            <div class="work-info">
+              <h4>VENETIAN DREAMS</h4>
+              <p>OIL ON CANVAS / LANDSCAPE</p>
+            </div>
+          </div>
+          <!-- Item 2: Artist (Tall Portrait) -->
+          <div class="work-card" data-category="all portraits">
+            <div class="img-wrapper portrait">
+              <img src="./images/artist_about_1773912613167.png" alt="The Creator" />
+            </div>
+            <div class="work-info">
+              <h4>THE CREATOR</h4>
+              <p>SELF PORTRAIT / REALISM</p>
+            </div>
+          </div>
+          <!-- Item 3: Temple (Square) -->
+          <div class="work-card" data-category="all abstract">
+            <div class="img-wrapper square">
+              <img src="./images/recent_work_temple_1773912685442.png" alt="Sacred Eternity" />
+            </div>
+            <div class="work-info">
+              <h4>SACRED ETERNITY</h4>
+              <p>ABSTRACT / CLASSICAL</p>
+            </div>
+          </div>
+          <!-- Item 4: Parisian Nights (Portrait) -->
+          <div class="work-card" data-category="all landscapes">
+            <div class="img-wrapper portrait">
+               <img src="./images/blog_eiffel_1773912701116.png" alt="Parisian Nights" />
+            </div>
+            <div class="work-info">
+              <h4>PARISIAN NIGHTS</h4>
+              <p>IMPRESSIONISM / OIL</p>
+            </div>
+          </div>
+          <!-- Item 5: Gilded Devotion (Square) -->
+           <div class="work-card" data-category="all abstract">
+            <div class="img-wrapper square">
+               <img src="./images/recent_work_temple_1773912685442.png" alt="Gilded Devotion" />
+            </div>
+            <div class="work-info">
+              <h4>GILDED DEVOTION</h4>
+              <p>MIXED MEDIA / ABSTRACT</p>
+            </div>
+          </div>
+          <!-- Item 6: Divine Grace (Square) -->
+           <div class="work-card" data-category="all portraits">
+            <div class="img-wrapper square">
+               <img src="./images/gallery_ganesha_1773912650708.png" alt="Divine Grace" />
+            </div>
+            <div class="work-info">
+              <h4>DIVINE GRACE</h4>
+              <p>ACRYLIC / PORTRAIT</p>
+            </div>
+          </div>
+
+          <!-- EXTRA PORTRAITS -->
+          <!-- Item 7 -->
+          <div class="work-card" data-category="portraits">
+            <div class="img-wrapper portrait">
+               <img src="./images/portrait_royal_1773915710458.png" alt="Royal Heritage" />
+            </div>
+            <div class="work-info">
+              <h4>ROYAL HERITAGE</h4>
+              <p>OIL ON CANVAS / MAJESTIC</p>
+            </div>
+          </div>
+          <!-- Item 8 -->
+          <div class="work-card" data-category="portraits">
+            <div class="img-wrapper square">
+               <img src="./images/portrait_woman_1773915729254.png" alt="Silent Reverie" />
+            </div>
+            <div class="work-info">
+              <h4>SILENT REVERIE</h4>
+              <p>OIL / IMPRESSIONISM</p>
+            </div>
+          </div>
+
+          <!-- EXTRA LANDSCAPES -->
+          <!-- Item 9 -->
+          <div class="work-card" data-category="landscapes">
+            <div class="img-wrapper square">
+               <img src="./images/landscape_valley_1773915745430.png" alt="Emerald Horizons" />
+            </div>
+            <div class="work-info">
+              <h4>EMERALD HORIZONS</h4>
+              <p>FINE ART / MOUNTAINS</p>
+            </div>
+          </div>
+          <!-- Item 10 -->
+          <div class="work-card" data-category="landscapes">
+            <div class="img-wrapper portrait">
+               <img src="./images/landscape_sunset_1773915765764.png" alt="Twilight Whispers" />
+            </div>
+            <div class="work-info">
+              <h4>TWILIGHT WHISPERS</h4>
+              <p>IMPASTO / GOLDEN HOUR</p>
+            </div>
+          </div>
+
+          <!-- EXTRA ABSTRACT -->
+          <!-- Item 11 -->
+          <div class="work-card" data-category="abstract">
+            <div class="img-wrapper square">
+               <img src="./images/abstract_gold_1773915785235.png" alt="Celestial Navigation" />
+            </div>
+            <div class="work-info">
+              <h4>CELESTIAL NAVIGATION</h4>
+              <p>GOLD LEAF / TEXTURED</p>
+            </div>
+          </div>
+          <!-- Item 12 -->
+          <div class="work-card" data-category="abstract">
+            <div class="img-wrapper square">
+               <img src="./images/abstract_crimson_1773915806634.png" alt="Crimson Echoes" />
+            </div>
+            <div class="work-info">
+              <h4>CRIMSON ECHOES</h4>
+              <p>FLUID STROKES / SILVER</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-8" style="padding-top: 2rem;">
+           <a href="./collection.html" class="btn btn-outline round-btn">Know More ↗</a>
+        </div>
+      </section>
+
+      <!-- Blog Section -->
+      <section class="blog-section section-padding bg-light">
+        <div class="section-header flex-between mb-8">
+          <h2 class="section-title max-w-lg">Every canvas holds a story waiting to be told.</h2>
+          <a href="./blog.html" class="btn btn-dark round-btn">Inside the Studio ↗</a>
+        </div>
+        <div class="blog-grid">
+          <article class="blog-card">
+            <div class="img-wrapper square">
+              <img src="./images/gallery_venice_1773912631467.png" alt="Blog 1" />
+            </div>
+            <h4>Mastering the interplay of light and shadow in dramatic landscape painting.</h4>
+            <p class="meta">By Kajal • Mar 2024</p>
+          </article>
+          <article class="blog-card">
+            <div class="img-wrapper square">
+              <img src="./images/gallery_ganesha_1773912650708.png" alt="Blog 2" />
+            </div>
+            <h4>Exploring vibrant cultural heritage through classical portraiture techniques.</h4>
+            <p class="meta">By Kajal • Feb 2024</p>
+          </article>
+          <article class="blog-card">
+            <div class="img-wrapper square">
+              <img src="./images/blog_dog_1773912718203.png" alt="Blog 3" />
+            </div>
+            <h4>The intricate techniques behind painting lifelike animal fur and textures.</h4>
+            <p class="meta">By Kajal • Jan 2024</p>
+          </article>
+          <article class="blog-card">
+            <div class="img-wrapper square">
+              <img src="./images/blog_eiffel_1773912701116.png" alt="Blog 4" />
+            </div>
+            <h4>Impressionist cityscapes: capturing the emotional mood of Parisian midnights.</h4>
+            <p class="meta">By Kajal • Dec 2023</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section class="services-section section-padding">
+        <h3 class="section-subtitle mb-8 max-w-2xl" style="font-size: 1.8rem; line-height: 1.3; font-weight: 500; text-transform: none; letter-spacing: normal;">Preserving the timeless tradition of classical painting with a modern soul, ensuring every piece is absolutely unique.</h3>
+        <div class="services-grid">
+          <div class="service-item">
+            <h5 class="service-title">01. Concept & Sketching</h5>
+            <p>Translating your vision onto the canvas through intricate preliminary sketches and composition planning.</p>
+          </div>
+          <div class="service-item">
+            <h5 class="service-title">02. Color Mixing</h5>
+            <p>Hand-grinding pigments to achieve the exact luminous, rich hues that commercial paints simply cannot replicate.</p>
+          </div>
+          <div class="service-item">
+            <h5 class="service-title">03. The Brushwork</h5>
+            <p>Applying layer upon layer of delicate glazes to build unparalleled depth, texture, and emotional resonance.</p>
+          </div>
+          <div class="service-item">
+            <h5 class="service-title">04. Curation & Framing</h5>
+            <p>Finishing the masterpiece with archival varnish and assisting with bespoke, museum-quality frame selection.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery Section -->
+      <section class="gallery-section section-padding">
+        <div class="gallery-large mb-4">
+          <img src="./images/gallery_venice_1773912631467.png" alt="Venice" class="w-full rounded" />
+        </div>
+        <div class="gallery-split">
+          <img src="./images/gallery_ganesha_1773912650708.png" alt="Ganesha" class="w-full rounded" />
+          <img src="./images/recent_work_temple_1773912685442.png" alt="Temple" class="w-full rounded" />
+        </div>
+        <div class="text-center mt-8 text-sm filter-tabs justify-center">
+          <span class="mr-4 text-gray border-b border-gray">← Prev Work</span>
+          <span class="border-b border-black font-semibold">Next Work →</span>
+        </div>
+      </section>
+    </main>
+
+      <!-- Luxury Split Contact Section -->
+      <section class="contact-section" id="contact" style="background: #ffffff; color: #111;">
+        <div class="contact-split">
+          
+          <div class="contact-image-wrapper reveal">
+            <img src="./images/abstract_gold_1773915785235.png" alt="Abstract Gold Art" />
+            <div class="contact-image-overlay">
+              <h2 class="overlay-text">ELEVATE<br><span style="font-family: serif; font-style: italic; font-weight: 300; font-size: 0.9em; transform: translateX(20px); display: inline-block;">YOUR SPACE</span></h2>
+            </div>
+          </div>
+          
+          <div class="contact-form-side">
+            <div class="contact-header mb-8 reveal" style="text-align: left;">
+              <h2 class="section-title" style="color: #111; font-weight: 800; font-size: 3.5rem; letter-spacing: -0.04em;">Let's Create.</h2>
+              <p class="body-text" style="margin: 1rem 0 0; font-size: 1.15rem; color: #666; max-width: 450px;">Inquire about a custom commissioned piece, an existing artwork, or simply say hello. Every vision deserves a canvas.</p>
+            </div>
+            
+            <div class="contact-form-wrapper light-premium-wrapper reveal">
+              <form action="mailto:studio@handcraftedbykajal.com" method="post" enctype="text/plain" class="custom-form light-theme-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="Name" required placeholder="John Doe" class="light-premium-input" />
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="Email" required placeholder="john@example.com" class="light-premium-input" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inquiry">Nature of Inquiry</label>
+                  <div class="light-select-wrapper">
+                    <select id="inquiry" name="Inquiry_Type" class="light-premium-input select">
+                      <option value="Artwork Commission">Artwork Commission</option>
+                      <option value="Purchase an Existing Piece">Purchase an Existing Piece</option>
+                      <option value="Exhibition/Gallery">Exhibition / Gallery</option>
+                      <option value="General Inquiry">General Inquiry</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="message">Your Message</label>
+                  <textarea id="message" name="Message" rows="3" required placeholder="Tell me about your vision..." class="light-premium-input textarea"></textarea>
+                </div>
+                <div class="text-left mt-8">
+                  <button type="submit" class="light-submit-btn w-full">
+                    <span>Send Inquiry</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section class="testimonials-section section-padding bg-dark text-light" id="testimonials">
+        <div class="testimonials-header text-center mb-8">
+          <h2 class="section-title" style="font-weight: 800; font-size: 3.5rem; letter-spacing: -0.04em;">CLIENT VOICES</h2>
+          <p class="body-text mx-auto mt-4" style="color: #aaa; max-width: 600px; margin-left: auto; margin-right: auto;">Discover what art collectors and enthusiasts say about experiencing these timeless creations.</p>
+        </div>
+        
+        <div class="testimonials-carousel-wrapper">
+          <div class="testimonials-carousel">
+            <!-- Slide 1 -->
+            <div class="testimonial-slide active">
+              <div class="testimonial-image">
+                <img src="./images/abstract_gold_1773915785235.png" alt="Testimonial background" />
+                <div class="testimonial-overlay"></div>
+              </div>
+              <div class="testimonial-content">
+                <svg class="quote-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto 1.5rem auto;"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path></svg>
+                <h3 class="testimonial-quote">"The painting transformed our entire living space. It's not just art; it's a breathing entity full of emotion."</h3>
+                <div class="testimonial-author">
+                  <h4>ELENA ROSTOVA</h4>
+                  <p>Acquired 'Celestial Navigation'</p>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="testimonial-slide">
+              <div class="testimonial-image">
+                <img src="./images/portrait_woman_1773915729254.png" alt="Testimonial background" />
+                <div class="testimonial-overlay"></div>
+              </div>
+              <div class="testimonial-content">
+                <svg class="quote-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto 1.5rem auto;"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path></svg>
+                <h3 class="testimonial-quote">"A masterful blend of classical technique with a modern soul. An absolute centerpiece for our collection."</h3>
+                <div class="testimonial-author">
+                  <h4>JAMES VANDERBILT</h4>
+                  <p>Art Collector • New York</p>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="testimonial-slide">
+              <div class="testimonial-image">
+                <img src="./images/abstract_crimson_1773915806634.png" alt="Testimonial background" />
+                <div class="testimonial-overlay"></div>
+              </div>
+              <div class="testimonial-content">
+                <svg class="quote-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto 1.5rem auto;"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path></svg>
+                <h3 class="testimonial-quote">"Her strokes capture feelings perfectly. Looking at the piece makes me pause and reflect every single day."</h3>
+                <div class="testimonial-author">
+                  <h4>ISABELLA CHEN</h4>
+                  <p>Acquired 'Crimson Echoes'</p>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 4 -->
+            <div class="testimonial-slide">
+              <div class="testimonial-image">
+                <img src="./images/gallery_venice_1773912631467.png" alt="Testimonial background" />
+                <div class="testimonial-overlay"></div>
+              </div>
+              <div class="testimonial-content">
+                <svg class="quote-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto 1.5rem auto;"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path></svg>
+                <h3 class="testimonial-quote">"The depth and texture of the water in 'Venetian Dreams' is mesmerizing. It brings true serenity to our home."</h3>
+                <div class="testimonial-author">
+                  <h4>MARCUS AURELIAN</h4>
+                  <p>Acquired 'Venetian Dreams'</p>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 5 -->
+            <div class="testimonial-slide">
+              <div class="testimonial-image">
+                <img src="./images/recent_work_temple_1773912685442.png" alt="Testimonial background" />
+                <div class="testimonial-overlay"></div>
+              </div>
+              <div class="testimonial-content">
+                <svg class="quote-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto 1.5rem auto;"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path></svg>
+                <h3 class="testimonial-quote">"A remarkable piece that bridges the ancient and the contemporary. It commands attention the moment you enter the room."</h3>
+                <div class="testimonial-author">
+                  <h4>SOPHIA LAURENT</h4>
+                  <p>Gallery Director</p>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 6 -->
+            <div class="testimonial-slide">
+              <div class="testimonial-image">
+                <img src="./images/landscape_sunset_1773915765764.png" alt="Testimonial background" />
+                <div class="testimonial-overlay"></div>
+              </div>
+              <div class="testimonial-content">
+                <svg class="quote-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto 1.5rem auto;"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path></svg>
+                <h3 class="testimonial-quote">"The golden hour captured here is ethereal. Her ability to manipulate light is nothing short of pure genius."</h3>
+                <div class="testimonial-author">
+                  <h4>DAVID HARRISON</h4>
+                  <p>Acquired 'Twilight Whispers'</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Navigation controls -->
+          <div class="testimonial-controls">
+            <button class="testi-btn prev" aria-label="Previous Testimonial">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <div class="testimonial-dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <button class="testi-btn next" aria-label="Next Testimonial">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light">
+      <div class="footer-top flex-between">
+        <div class="footer-links">
+          <h4 class="mb-4">Quick links</h4>
+          <div class="link-grid">
+            <a href="./index.html#about">About</a>
+            <a href="./index.html#collection">What we do</a>
+            <a href="#contact">Contact</a>
+            <a href="#">Projects</a>
+            <a href="./blog.html">Blog</a>
+            <a href="./legacy.html">Pricing</a>
+            <a href="#">Installations</a>
+          </div>
+        </div>
+        <div class="footer-contact text-right">
+          <p class="mb-2 text-sm text-gray">Starting a new project?</p>
+          <h3 class="contact-number"><a href="https://wa.me/918826464841" target="_blank" style="color: white; text-decoration: none;">+91 8826464841</a></h3>
+        </div>
+      </div>
+      <div class="footer-huge-text">
+        <h2>SAY HELLO!</h2>
+      </div>
+      <div class="footer-bottom flex-between">
+        <div class="logo small">HANDCRAFTED<br>BY KAJAL</div>
+        <div class="social-links">
+          <a href="#">Facebook ↗</a>
+          <a href="#">Twitter ↗</a>
+          <a href="#">Instagram ↗</a>
+          <a href="#">LinkedIn ↗</a>
+        </div>
+        <div class="copyright">
+          Copyright © 2024
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
