@@ -10,14 +10,13 @@ const init = () => {
   );
 
   const cardsToReveal = document.querySelectorAll('.work-card, .blog-card, .service-item');
-  const heroThumbs = document.querySelectorAll('.rounded-thumb');
   const galleryImages = document.querySelectorAll('.gallery-large, .gallery-split img');
 
-  const allRevealElements = [...elementsToReveal, ...cardsToReveal, ...heroThumbs, ...galleryImages];
+  const allRevealElements = [...elementsToReveal, ...cardsToReveal, ...galleryImages];
 
   allRevealElements.forEach((el) => {
     el.classList.add('reveal');
-    if (el.classList.contains('work-card') || el.classList.contains('blog-card') || el.classList.contains('service-item') || el.classList.contains('rounded-thumb')) {
+    if (el.classList.contains('work-card') || el.classList.contains('blog-card') || el.classList.contains('service-item')) {
          const parentChildren = Array.from(el.parentElement.children);
          const i = parentChildren.indexOf(el);
          el.style.transitionDelay = `${(i % 4) * 0.15}s`;
