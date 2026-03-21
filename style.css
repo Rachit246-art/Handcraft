@@ -266,6 +266,12 @@ body > main {
   animation: fadeInPage 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+@keyframes pulseWa {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
 /* Footer Link Magnetic Underline (Premium Hover) */
 .footer-links a {
   position: relative;

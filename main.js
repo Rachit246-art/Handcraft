@@ -59,15 +59,6 @@ const init = () => {
       heroBadge.style.transform = `translateY(${scrollY * 0.35}px) rotate(${scrollY * 0.05}deg)`;
     }
 
-    if (thumbsParallax.length && scrollY < windowHeight) {
-       thumbsParallax.forEach((thumb, i) => {
-           const speed = 0.1 + (i * 0.05); 
-           if(thumb.classList.contains('active')){
-               thumb.style.transform = `translateY(${scrollY * speed}px)`;
-           }
-       });
-    }
-
     if (aboutImg) {
       const aboutRect = document.querySelector('.about-section').getBoundingClientRect();
       if (aboutRect.top < windowHeight && aboutRect.bottom > 0) {
@@ -421,16 +412,17 @@ const init = () => {
         right: 30px;
         width: 60px;
         height: 60px;
-        background-color: #25D366;
+        background: linear-gradient(135deg, #25D366, #128C7E);
         color: white;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
         z-index: 10000;
+        animation: pulseWa 2s infinite;
         transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      " onmouseover="this.style.transform='scale(1.1) translateY(-5px)'" onmouseout="this.style.transform='scale(1) translateY(0)'">
+      " onmouseover="this.style.transform='scale(1.1)'; this.style.animation='none';" onmouseout="this.style.transform='scale(1)'; this.style.animation='pulseWa 2s infinite';">
         <svg fill="#fff" width="35px" height="35px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.52 3.449a11.968 11.968 0 00-8.49-3.447C5.43 0 0 5.43 0 11.988c0 2.098.546 4.143 1.585 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 12-5.43 12-11.988a11.912 11.912 0 00-3.53-8.357zM12.045 21.746h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c0-5.445 4.455-9.875 9.897-9.875 2.64 0 5.122 1.03 6.988 2.895a9.87 9.87 0 012.894 6.984c-.001 5.445-4.456 9.888-9.896 9.888zm5.422-7.412c-.297-.149-1.758-.867-2.03-.967-.271-.099-.47-.148-.667.149-.198.297-.768.966-.94 1.164-.173.199-.347.223-.644.075a8.23 8.23 0 01-2.427-1.498 9.079 9.079 0 01-1.688-2.094c-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.297-.496.099-.198.05-.371-.025-.52-.074-.148-.667-1.609-.914-2.203-.242-.579-.487-.501-.667-.51l-.57-.01c-.198 0-.52.074-.792.371-.272.297-1.04 1.016-1.04 2.476 0 1.46 1.065 2.872 1.213 3.07.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.574-.085 1.758-.718 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
       </a>
     `;
