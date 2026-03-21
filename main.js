@@ -411,6 +411,50 @@ const init = () => {
 
     startAutoPlay();
   }
+
+  // --- Global Floating WhatsApp Button ---
+  if (!document.getElementById('floating-wa')) {
+    const waHTML = `
+      <a href="https://wa.me/918826464841" id="floating-wa" target="_blank" aria-label="WhatsApp" style="
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        background-color: #25D366;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        z-index: 10000;
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      " onmouseover="this.style.transform='scale(1.1) translateY(-5px)'" onmouseout="this.style.transform='scale(1) translateY(0)'">
+        <svg fill="#fff" width="35px" height="35px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.52 3.449a11.968 11.968 0 00-8.49-3.447C5.43 0 0 5.43 0 11.988c0 2.098.546 4.143 1.585 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 12-5.43 12-11.988a11.912 11.912 0 00-3.53-8.357zM12.045 21.746h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c0-5.445 4.455-9.875 9.897-9.875 2.64 0 5.122 1.03 6.988 2.895a9.87 9.87 0 012.894 6.984c-.001 5.445-4.456 9.888-9.896 9.888zm5.422-7.412c-.297-.149-1.758-.867-2.03-.967-.271-.099-.47-.148-.667.149-.198.297-.768.966-.94 1.164-.173.199-.347.223-.644.075a8.23 8.23 0 01-2.427-1.498 9.079 9.079 0 01-1.688-2.094c-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.297-.496.099-.198.05-.371-.025-.52-.074-.148-.667-1.609-.914-2.203-.242-.579-.487-.501-.667-.51l-.57-.01c-.198 0-.52.074-.792.371-.272.297-1.04 1.016-1.04 2.476 0 1.46 1.065 2.872 1.213 3.07.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.574-.085 1.758-.718 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+      </a>
+    `;
+    document.body.insertAdjacentHTML('beforeend', waHTML);
+  }
+
+  // --- Social Media SVG Icons Injection ---
+  const socialConfig = {
+    'Facebook': '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right:0.5rem; vertical-align:text-bottom;"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/></svg>',
+    'Twitter': '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right:0.5rem; vertical-align:text-bottom;"><path d="M22.46 6C21.69 6.35 20.86 6.58 20 6.69C20.88 6.16 21.56 5.32 21.88 4.31C21.05 4.81 20.13 5.16 19.16 5.36C18.37 4.5 17.26 4 16 4C13.65 4 11.73 5.92 11.73 8.29C11.73 8.63 11.77 8.96 11.84 9.27C8.28 9.09 5.11 7.38 3 4.79C2.63 5.42 2.42 6.16 2.42 6.94C2.42 8.43 3.17 9.75 4.33 10.5C3.62 10.5 2.96 10.3 2.38 10V10.05C2.38 12.11 3.82 13.84 5.77 14.24C5.41 14.34 5.03 14.39 4.64 14.39C4.36 14.39 4.1 14.36 3.83 14.31C4.38 16 5.92 17.23 7.79 17.27C6.35 18.39 4.54 19.07 2.56 19.07C2.21 19.07 1.86 19.05 1.5 19.01C3.39 20.22 5.62 20.92 8.01 20.92C15.83 20.92 20.1 14.45 20.1 8.85C20.1 8.67 20.1 8.48 20.09 8.3C20.92 7.69 21.65 6.9 22.25 6H22.46Z"/></svg>',
+    'Instagram': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:0.5rem; vertical-align:text-bottom;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>',
+    'LinkedIn': '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right:0.5rem; vertical-align:text-bottom;"><path d="M22.23 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.2 0 22.23 0zM7.12 20.45H3.56V9H7.12v11.45zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm15.11 13.02h-3.56v-5.56c0-1.33-.03-3.03-1.85-3.03-1.85 0-2.13 1.44-2.13 2.93v5.66h-3.56V9h3.42v1.56h.05c.48-.9 1.63-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29z"/></svg>'
+  };
+
+  const socialLinksA = document.querySelectorAll('.social-links a');
+  socialLinksA.forEach(link => {
+    const textContext = link.textContent.trim().replace(' ↗', '');
+    if (socialConfig[textContext] && !link.querySelector('svg')) {
+      link.innerHTML = socialConfig[textContext] + link.innerHTML;
+      link.style.display = 'inline-flex';
+      link.style.alignItems = 'center';
+    }
+  });
+
 };
 
 // Handle Vite HMR edge cases where script is reloaded but page is not re-parsed
