@@ -195,7 +195,7 @@ h1, h2, h3, h4, h5 { font-weight: 600; line-height: 1.1; letter-spacing: -0.02em
 .footer-huge-text { text-align: center; margin: 8rem 0; overflow: hidden; }
 .footer-huge-text h2 { font-size: 15vw; line-height: 1; font-weight: 800; letter-spacing: -0.06em; color: white; text-transform: uppercase; margin: 0; padding: 0; }
 .footer-bottom { border-top: 1px solid #333; padding-top: 2rem; font-size: 0.9rem; color: #888; display: flex; justify-content: space-between; align-items: center; }
-.social-links { display: flex; gap: 2rem; }
+.social-links { display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; }
 .social-links a { transition: color 0.3s; }
 .social-links a:hover { color: white; }
 
