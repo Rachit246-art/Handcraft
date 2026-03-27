@@ -55,7 +55,7 @@ const init = () => {
     const windowHeight = window.innerHeight;
 
     if (heroBadge && scrollY < windowHeight) {
-      heroBadge.style.transform = `translateY(${scrollY * 0.35}px) rotate(${scrollY * 0.05}deg)`;
+      heroBadge.style.transform = `rotate(${scrollY * 0.05}deg)`;
     }
 
     if (aboutImg) {
